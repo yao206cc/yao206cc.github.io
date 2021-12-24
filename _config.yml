@@ -8,7 +8,7 @@ subtitle: '爱前端 | 爱生活 | 爱自己'
 description: ''
 keywords: '前端,摄影,分享,内容收录'
 author: yao206cc
-language: zh-cn
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: ocean
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
