@@ -98,10 +98,10 @@ The [feathericon](https://feathericon.com) in the menu is programmed ordely in "
     .nav-item-link
       &::before
         content '\f12a'
-  //&:nth-child(3)         // gallery
-  //  .nav-item-link
-  //    &::before
-  //      content '\f1a9'
+  &:nth-child(3)         // gallery
+    .nav-item-link
+      &::before
+        content '\f1a9'
   //&:nth-child(4)         // about
   //  .nav-item-link
   //    &::before
