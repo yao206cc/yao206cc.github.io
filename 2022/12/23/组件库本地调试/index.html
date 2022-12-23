@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <meta name="keywords" content="前端,摄影,分享,内容收录">
+  
+  
+  <title>
+    组件库本地调试 |
+    
+    FY Home
+  </title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-组件库本地调试" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h1 class="article-title" itemprop="name">
+  组件库本地调试
+</h1>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/12/23/%E7%BB%84%E4%BB%B6%E5%BA%93%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95/" class="article-date">
+  <time datetime="2022-12-23T07:54:40.660Z" itemprop="datePublished">2022-12-23</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>组件库本地调试</p>
+<span id="more"></span>
+
+<h2 id="组件库本地调试"><a href="#组件库本地调试" class="headerlink" title="组件库本地调试"></a>组件库本地调试</h2><p>近期公司搭建内部组件库.基于<code>Dumi</code>和<code>React</code>.记录下遇到的问题</p>
+<h3 id="依赖问题"><a href="#依赖问题" class="headerlink" title="依赖问题"></a>依赖问题</h3><p>核心依赖需要通过<code>package.json</code>中<code>peerDependencies</code>字段控制,以便与避免核心依赖库被重复下载以及可能出现的依赖版本问题(如<code>React Hooks</code> )</p>
+<h3 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h3><p><code>yalc</code>可以提供本地npm环境.不需要发布就能调试组件库.</p>
+<ul>
+<li><p>构建并发布组件库</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> yarn global add yalc</span></span><br><span class="line"><span class="meta">$</span><span class="bash">	<span class="built_in">cd</span> &lt;组件库项目路径&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn run build</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yalc publish</span></span><br></pre></td></tr></table></figure></li>
+<li><p>使用组件库</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;项目路径&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yalc add &lt;pkg&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn &amp;&amp; yarn start</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yao206cc.github.io/2022/12/23/%E7%BB%84%E4%BB%B6%E5%BA%93%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95/" data-id="clc07w9gy0005fipicoj046ks" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/12/23/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E6%96%B9%E6%A1%88/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      移动端web调试指南
+      
+    </div>
+  </a>
+  
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>FY Home &copy; 2022</li>
+      
+        <li>ZHWANGART</li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="FY Home"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/copybtn.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

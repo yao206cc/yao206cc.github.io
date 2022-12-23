@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <meta name="keywords" content="前端,摄影,分享,内容收录">
+  
+  
+  <title>
+    移动端web调试指南 |
+    
+    FY Home
+  </title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-前端本地调试方案" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h1 class="article-title" itemprop="name">
+  移动端web调试指南
+</h1>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/12/23/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E6%96%B9%E6%A1%88/" class="article-date">
+  <time datetime="2022-12-23T07:54:40.660Z" itemprop="datePublished">2022-12-23</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>移动端web调试指南</p>
+<span id="more"></span>
+
+<h2 id="移动端web调试指南"><a href="#移动端web调试指南" class="headerlink" title="移动端web调试指南"></a>移动端web调试指南</h2><h3 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h3><ul>
+<li>Brew</li>
+<li>Node</li>
+<li>Android SDK</li>
+<li>JDK8</li>
+<li>IOS SDK</li>
+</ul>
+<h3 id="调试工具准备"><a href="#调试工具准备" class="headerlink" title="调试工具准备"></a>调试工具准备</h3><ul>
+<li>Android应用<ul>
+<li>Google Chrome</li>
+<li>Android Studio</li>
+</ul>
+</li>
+<li>IOS应用<ul>
+<li>Xcode</li>
+<li>Safari 浏览器</li>
+</ul>
+</li>
+<li>真机或模拟器</li>
+<li>fiddler-everywhere或同类代理应用</li>
+</ul>
+<h3 id="开始调试工作"><a href="#开始调试工作" class="headerlink" title="开始调试工作"></a>开始调试工作</h3><ul>
+<li>Android<ul>
+<li>打开Android Studio 模拟器</li>
+<li>拖拽APP安装包到模拟器</li>
+<li>APP内打开H5页面</li>
+<li>chrome 打开 chrome://inspect/#devices</li>
+<li>Remote Target对应设备</li>
+<li>点击inspect(开发工具需要调用Google服务.不能翻墙自行查阅下载<a href="%5Bhttps://github.com/vikyd/note/blob/master/chrome_offline_download.md#chrome-%E7%A6%BB%E7%BA%BF%E5%8C%85---%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%AE%98%E6%96%B9%5D(https://github.com/vikyd/note/blob/master/chrome_offline_download.md#chrome-%E7%A6%BB%E7%BA%BF%E5%8C%85---%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%AE%98%E6%96%B9)">Chrome历史版本</a>)</li>
+</ul>
+</li>
+<li>IOS<ul>
+<li>打开Xcode模拟器</li>
+<li>拖拽APP安装包到模拟器</li>
+<li>APP内打开H5页面</li>
+<li>手机开启web检查器</li>
+<li>打开 Safari 浏览器.点击偏好设置-高级-选中在菜单栏中显示”开发”菜单</li>
+<li>任务栏点击开发找到对应模拟器机型</li>
+<li>选中对应网址即弹出开发者调试工具</li>
+</ul>
+</li>
+</ul>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><ul>
+<li><p>真机调试本地web</p>
+<ul>
+<li>打开fiddler-everywhere.添加https证书和代理端口</li>
+<li>手机Wi-Fi添加代理 填写本机10或192号段IP地址.代理端口与上一步软件端口相同</li>
+<li>测试手机访问本机IP:端口</li>
+<li>打开SwitchHosts配置本机代理</li>
+<li>测试手机访问host代理域名</li>
+<li>后续同上述<a href="#%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95%E5%B7%A5%E4%BD%9C">开始调试工作</a>章节(真机替代模拟器)</li>
+</ul>
+</li>
+<li><p>模拟器调试本地web</p>
+<ul>
+<li>打开模拟器</li>
+<li>配置模拟器代理</li>
+<li>其他步骤同上<a href="#%E8%BF%9B%E9%98%B6">真机调试本地web</a></li>
+</ul>
+</li>
+<li><p>chrome调试IOS应用</p>
+<ul>
+<li><pre><code class="shell">#安装 ios-webkit-debug-proxy、remotedebug-ios-webkit-adapter
+ios_webkit_debug_proxy -f chrome-devtools://devtools/bundled/inspector.html
+npm install remotedebug-ios-webkit-adapter -g
+# 启动
+remotedebug_ios_webkit_adapter --port=9000
+</code></pre>
+</li>
+<li><p>打开Google Chrome,输入chrome://inspect/#devices</p>
+</li>
+<li><p><strong>Remote Target</strong> 找到对应H5页面 inspect</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yao206cc.github.io/2022/12/23/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E6%96%B9%E6%A1%88/" data-id="clc07w9gv0003fipi869q30bo" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/12/23/vite/" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      Vite和Webpack对比
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/12/23/%E7%BB%84%E4%BB%B6%E5%BA%93%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95/" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">组件库本地调试</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>FY Home &copy; 2022</li>
+      
+        <li>ZHWANGART</li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="FY Home"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/copybtn.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
